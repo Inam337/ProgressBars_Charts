@@ -1,0 +1,41 @@
+<div class="man-power-data-card">
+  <div class="man-power-data-heading">
+    <h3>Progress Bar Chart</h3>
+  </div>
+  <div class="man-power-data-chart">
+    <div class="progress-multi-status">
+      <div class="progress-container">
+        <div class="progress-bar mt-1 mb-1">
+          <ng-container *ngFor="let item of progressBarDataList">
+            <div
+              class="progress-bar"
+              [style]="getStyle(item.color, item.value)"
+            >
+              <span class="tooltip-box">{{ item.value }}</span>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="legends-status">
+      <div class="legends-status-row p-2">
+        <div class="row">
+          <ng-container *ngFor="let item of progressBarDataList">
+            <div class="col-4 present-legend">
+              <div class="legend-content mb-1 mt-1">
+                <label>
+                  <i
+                    class="legend-marker green-marker"
+                    [style]="getSingleStyle(item.color)"
+                  ></i>
+                  <b class="legend-text">{{ item.name }}</b>
+                </label>
+                <span>{{ item.value }}</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
